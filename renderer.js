@@ -21,6 +21,7 @@ newFileButton.addEventListener('click', () => {
 
 markdownView.addEventListener('keyup', (event) => {
   renderMarkdown(event.target.value);
+  currentWindow.setDocumentEdited(true);
 });
 
 openFileButton.addEventListener('click', () => {
