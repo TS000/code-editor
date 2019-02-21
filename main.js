@@ -3,7 +3,7 @@ const fs = require('fs');
 
 let mainWindow
 
-const getFileFromUserSelection = () => {
+const getFileFromUserSelection = exports.getFileFromUserSelection = () => {
   const files = dialog.showOpenDialog(mainWindow, {
     properties: ['openFile'],
     filters: [
@@ -32,7 +32,6 @@ function createWindow () {
   mainWindow.on('closed', function () {
     mainWindow = null
   })
-  getFileFromUserSelection();
 }
 app.on('ready', createWindow)
 
