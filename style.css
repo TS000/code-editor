@@ -35,27 +35,29 @@ button {
 }
 
 .controls {
-  background-color: rgb(217, 241, 238);
+  background-color: #663399;
   padding: 10px 10px 10px 10px;
 }
 
 button {
   font-size: 14px;
-  background-color: rgb(181, 220, 216);
+  background-color: #ffefd5;
+  font-weight: 700;
   border: none;
   padding: 0.5em 1em;
 }
 
 button:hover {
-  background-color: rgb(156, 198, 192);
+  background-color: #e5d7bf;
 }
 
 button:active {
-  background-color: rgb(144, 182, 177);
+  background-color: #ccbfaa;
 }
 
 button:disabled {
-  background-color: rgb(196, 204, 202);
+  background-color: #fff7ea;
+  font-weight: 300;
 }
 
 .container {
