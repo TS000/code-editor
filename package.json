@@ -1,0 +1,25 @@
+{
+  "name": "code-editor",
+  "version": "1.0.0",
+  "description": "Smol text editor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/TS000/codeEditor",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "marked": "^0.6.1"
+  }
+}
