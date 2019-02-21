@@ -7,7 +7,9 @@ const getFileFromUserSelection = exports.getFileFromUserSelection = () => {
   const files = dialog.showOpenDialog(mainWindow, {
     properties: ['openFile'],
     filters: [
-      { name: 'Text Files', extensions: ['txt', 'text'] }
+      { name: 'Text Files', extensions: ['txt', 'text'] },
+      { name: 'JS Files', extensions: ['js', 'jsx'] },
+      { name: 'HTML Files', extensions: ['html'] }
     ]
   });
 
@@ -16,7 +18,7 @@ const getFileFromUserSelection = exports.getFileFromUserSelection = () => {
   const file = files[0];
   const content = fs.readFileSync(file).toString();
 
-  console.log(content);
+  mainWindow.webContents.send('file-opened', file, content);
 };
 
 function createWindow () {
