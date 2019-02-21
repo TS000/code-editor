@@ -1,6 +1,7 @@
 const marked = require('marked');
 const { remote, ipcRenderer } = require('electron');
 const mainProcess = remote.require('./main');
+const currentWindow = remote.getCurrentWindow();
 
 const markdownView = document.querySelector('#markdown');
 const htmlView = document.querySelector('#html');
@@ -14,12 +15,16 @@ const renderMarkdown = (markdown) => {
   htmlView.innerHTML = marked(markdown, { sanitize: true });
 }
 
+newFileButton.addEventListener('click', () => {
+  mainProcess.createWindow();
+})
+
 markdownView.addEventListener('keyup', (event) => {
   renderMarkdown(event.target.value);
 });
 
 openFileButton.addEventListener('click', () => {
-  mainProcess.getFileFromUserSelection();
+  mainProcess.openFile(currentWindow);
 });
 
 ipcRenderer.on('file-opened', (event, file, content) => {
